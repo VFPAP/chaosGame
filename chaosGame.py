@@ -29,8 +29,9 @@ M = []
 
 M.append(((ptA[0] + points[-1][0])/2, (ptA[1] + points[-1][1])/2))
 
+n = 0
 i = 1
-while i < N:
+while n < N:
     M.append(((M[i-1][0] + ptB[0]) / 2, (M[i-1][1] + ptB[1]) / 2))
     M.append(((M[i][0] + ptC[0]) / 2, (M[i][1] + ptC[1]) / 2))
     M.append(((M[i+1][0] + ptA[0]) / 2, (M[i+1][1] + ptA[1]) / 2))
@@ -40,6 +41,7 @@ while i < N:
     points.append(M[i+1])
 
     i = i + 2
+    n = n + 1
 
 x, y = zip(*points)
 plt.scatter(x, y, s=0.1)
